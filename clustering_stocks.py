@@ -41,4 +41,9 @@ df = pd.DataFrame({'labels': labels, 'companies': companies})
 # Display df sorted by cluster label
 print(df.sort_values('labels'))
 
-print(pd.crosstab(df['labels'], df['companies']))
+ct = pd.crosstab(df['labels'], df['companies'])
+
+print(ct)
+
+ct.to_csv('Stock_clustering.csv')
+
